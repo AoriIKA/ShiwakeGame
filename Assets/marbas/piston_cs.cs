@@ -22,12 +22,13 @@ public class piston_cs : MonoBehaviour
     }
     IEnumerator piston_Action()
     {
-        for(float i = 0; i< 10; i++)
+        for(float i = 0; i< 20; i++)
         {
             transform.Translate(0.1f, 0, 0);
             yield return new WaitForSeconds(0.005f);
         }
+
         yield return new WaitForSeconds(1f);
-        transform.Translate(-1.0f, 0, 0);
+        transform.position = new Vector3(-3.95f, 0, 0);
     }
 }
