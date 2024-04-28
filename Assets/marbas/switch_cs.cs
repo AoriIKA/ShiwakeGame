@@ -17,11 +17,11 @@ public class switch_cs : MonoBehaviour
         {
             if (Switch_bool)
             {
-                this.transform.rotation = Quaternion.Euler(5, -25f, -20);
+                this.transform.rotation = Quaternion.Euler(0, -45f, 0);
                 Switch_bool = false;
             }else
             {
-                this.transform.rotation = Quaternion.Euler(5, 25f, -20);
+                this.transform.rotation = Quaternion.Euler(0, 45, 0);
                 Switch_bool = true;
             }
         }

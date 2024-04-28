@@ -29,6 +29,6 @@ public class piston_cs : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1f);
-        transform.position = new Vector3(-3.95f, 0, 0);
+        transform.position = new Vector3(0, 0.53f, -1.92f);
     }
 }
