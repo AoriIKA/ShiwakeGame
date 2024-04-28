@@ -19,4 +19,16 @@ public class FishMove : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Piston‚ÉG‚ê‚½‚ç
+        if(collision.gameObject.name == "Piston")
+        {
+            //—Í‚ğƒŠƒZƒbƒg
+            rb.AddForce(MoveSpeed * new Vector3(0, 0, 0));
+
+            rb.AddForce(MoveSpeed * -this.transform.forward);
+        }
+    }
 }
