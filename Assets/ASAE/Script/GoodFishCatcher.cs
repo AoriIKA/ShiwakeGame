@@ -6,7 +6,9 @@ public class GoodFishCatcher : MonoBehaviour
 {
     [SerializeField]
     private GameManager gameManager = null;
-  
+
+    [SerializeField]
+    private Transform parentObject=null;  
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,17 +16,21 @@ public class GoodFishCatcher : MonoBehaviour
         if (other.transform.tag == "GoodFish")
         {
             gameManager.SetSuccessCount();
+            other.transform.parent = parentObject;//魚オブジェクトを籠の子にする
             other.transform.tag = "InspectedFish";
-            other.GetComponent<Debug_Cube_cs>().enabled = false;
+            other.GetComponent<Debug_Cube_cs>().IsMoveDisableFlag();
             other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            other.GetComponent<Debug_Cube_cs>().InvokeDisableRigidBody();
             Debug.Log("Good!");
         }
         else if (other.transform.tag == "BadFish" || other.transform.tag == "DontFish")
         {
             gameManager.SetMissCount();
+            other.transform.parent = parentObject;//魚オブジェクトを籠の子にする
             other.transform.tag = "InspectedFish";
-            other.GetComponent<Debug_Cube_cs>().enabled = false;
+            other.GetComponent<Debug_Cube_cs>().IsMoveDisableFlag();
             other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            other.GetComponent<Debug_Cube_cs>().InvokeDisableRigidBody();
             Debug.Log("Miss!!");
         }
     }

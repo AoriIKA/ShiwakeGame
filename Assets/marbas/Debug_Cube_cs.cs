@@ -8,6 +8,8 @@ public class Debug_Cube_cs : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField, Header("スピード")]
     private float moveSpeed;
+
+    private bool isMoved = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,7 @@ public class Debug_Cube_cs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isMoved) return;
         if (!Wall_On)
         {
             transform.Translate(0f, 0, -0.01f);
@@ -32,5 +35,20 @@ public class Debug_Cube_cs : MonoBehaviour
             Wall_On = true;
             
         }
+    }
+
+    public void IsMoveDisableFlag()
+    {
+        isMoved = false;
+    }
+
+    public void InvokeDisableRigidBody()
+    {
+        Invoke("DisableRigidBody", 10f);
+    }
+
+   private void DisableRigidBody()
+    {
+        rb.isKinematic = true;
     }
 }

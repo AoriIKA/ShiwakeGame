@@ -56,7 +56,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-      //  spawnScript.IsGenerate();
+        //メイン生成に変更
+        spawnScript.IsChengeGame();
     }
 
 
@@ -120,6 +121,7 @@ public class GameManager : MonoBehaviour
     {
         successCountText.text = "X" + successCount.ToString();
         missCountText.text = "X" + missCount.ToString();
+        //フェードアウトの処理
     }
 
 }
