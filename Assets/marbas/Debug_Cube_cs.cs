@@ -19,7 +19,7 @@ public class Debug_Cube_cs : MonoBehaviour
     {
         if (!Wall_On)
         {
-            transform.Translate(0f, 0, 0.01f);
+            transform.Translate(0f, 0, -0.01f);
         }else
         {
             rb.AddForce(new Vector3(0, 0, 1f) * moveSpeed);

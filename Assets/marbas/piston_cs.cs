@@ -5,10 +5,11 @@ using UnityEngine;
 public class piston_cs : MonoBehaviour
 {
     [SerializeField] GameObject Piston_obj;
+    private float piston_Vecter_X;
     // Start is called before the first frame update
     void Start()
     {
-        
+        piston_Vecter_X = transform.position.x;
     }
 
     // Update is called once per frame
@@ -29,6 +30,6 @@ public class piston_cs : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1f);
-        transform.position = new Vector3(0, 0.53f, -1.92f);
+        transform.position = new Vector3(piston_Vecter_X, this.transform.position.y, this.transform.position.z);
     }
 }
