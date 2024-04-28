@@ -22,8 +22,10 @@ public class GameManager : MonoBehaviour
     private int nowFishCount=0;
 
     //仕分け成功数
+    [SerializeField]
     private int successCount=0;
     //仕分け失敗数
+    [SerializeField]
     private int missCount = 0;
 
     //外部から魚の最大生成数を取得用

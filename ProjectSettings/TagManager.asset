@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Test_marbas_wall
+  - GoodFish
+  - BadFish
+  - DontFish
   layers:
   - Default
   - TransparentFX
