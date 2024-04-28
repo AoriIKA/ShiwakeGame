@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +17,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Scene_TYPE sceneType;
 
+    [SerializeField]
+    private SpawnControl spawnScript = null;
+
     //魚の最大生成数
     [SerializeField]
     private int maxGenerationFishCount = 0;
@@ -28,7 +33,20 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int missCount = 0;
 
-    
+    [SerializeField]
+    TMP_Text norumaCountText = null;
+
+
+    /*  リザルト関係　　*/
+    [SerializeField]
+    GameObject resultUIObject = null;
+    [SerializeField]
+    TMP_Text successCountText = null;
+    [SerializeField]
+    TMP_Text missCountText = null;
+    /*------------------------*/
+
+
 
     //外部から魚の最大生成数を取得用
     public int GetMaxGenerationFishCount()
@@ -36,23 +54,11 @@ public class GameManager : MonoBehaviour
         return maxGenerationFishCount;
     }
 
-    //成功した仕分けのカウントアップ処理
-    public void SetSuccessCount()
+    private void Awake()
     {
-        successCount++;
-        nowFishCount--;//残りカウント
-
-        //以下にnowCountが０になったらResult処理へ移行
+      //  spawnScript.IsGenerate();
     }
 
-    //失敗した仕分けのカウントアップ処理
-    public void SetMissCount()
-    {
-        missCount++;
-        nowFishCount--;//残りカウント
-
-        //以下にnowCountが０になったらResult処理へ移行
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -81,4 +87,39 @@ public class GameManager : MonoBehaviour
         break;
         }
     }
+
+    //成功した仕分けのカウントアップ処理
+    public void SetSuccessCount()
+    {
+        successCount++;
+        norumaCountText.text = (nowFishCount-=1).ToString();//残りカウント
+
+        //以下にnowCountが０になったらResult処理へ移行
+        if (nowFishCount <= 0)
+        {
+            StartResultSystem();
+            resultUIObject.SetActive(true);
+        }
+    }
+
+    //失敗した仕分けのカウントアップ処理
+    public void SetMissCount()
+    {
+        missCount++;
+        norumaCountText.text = (nowFishCount -= 1).ToString();//残りカウント
+
+        //以下にnowCountが０になったらResult処理へ移行
+        if (nowFishCount <= 0)
+        {
+            StartResultSystem();
+            resultUIObject.SetActive(true);
+        }
+    }
+
+    void StartResultSystem()
+    {
+        successCountText.text = "X" + successCount.ToString();
+        missCountText.text = "X" + missCount.ToString();
+    }
+
 }

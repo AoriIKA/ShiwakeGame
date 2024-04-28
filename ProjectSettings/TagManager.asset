@@ -8,6 +8,7 @@ TagManager:
   - GoodFish
   - BadFish
   - DontFish
+  - InspectedFish
   layers:
   - Default
   - TransparentFX

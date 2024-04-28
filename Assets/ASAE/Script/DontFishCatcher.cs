@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BadFishCatcher : MonoBehaviour
+public class DontFishCatcher : MonoBehaviour
 {
     [SerializeField]
     private GameManager gameManager = null;
@@ -11,7 +11,7 @@ public class BadFishCatcher : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //GoodFishCatcherにGoodFishが接触すれば成功にカウントそれ以外はMissとしてカウント
-        if (other.transform.tag == "BadFish")
+        if (other.transform.tag == "DontFish")
         {
             gameManager.SetSuccessCount();
             other.transform.tag = "InspectedFish";
@@ -19,7 +19,7 @@ public class BadFishCatcher : MonoBehaviour
             other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             Debug.Log("Good!");
         }
-        else if (other.transform.tag == "GoodFish" || other.transform.tag == "DontFish")
+        else if (other.transform.tag == "BadFish" || other.transform.tag == "GoodFish")
         {
             gameManager.SetMissCount();
             other.transform.tag = "InspectedFish";

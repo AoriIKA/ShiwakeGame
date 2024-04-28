@@ -8,19 +8,23 @@ public class GoodFishCatcher : MonoBehaviour
     private GameManager gameManager = null;
   
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         //GoodFishCatcherにGoodFishが接触すれば成功にカウントそれ以外はMissとしてカウント
-        if (collision.transform.tag == "GoodFish")
+        if (other.transform.tag == "GoodFish")
         {
             gameManager.SetSuccessCount();
-            collision.gameObject.SetActive(false);
+            other.transform.tag = "InspectedFish";
+            other.GetComponent<Debug_Cube_cs>().enabled = false;
+            other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             Debug.Log("Good!");
         }
-        else
+        else if (other.transform.tag == "BadFish" || other.transform.tag == "DontFish")
         {
             gameManager.SetMissCount();
-            collision.gameObject.SetActive(false);
+            other.transform.tag = "InspectedFish";
+            other.GetComponent<Debug_Cube_cs>().enabled = false;
+            other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             Debug.Log("Miss!!");
         }
     }
