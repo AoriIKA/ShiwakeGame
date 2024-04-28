@@ -22,7 +22,7 @@ public class Debug_Cube_cs : MonoBehaviour
             transform.Translate(0f, 0, -0.01f);
         }else
         {
-            rb.AddForce(new Vector3(0, 0, 1f) * moveSpeed);
+            rb.AddForce(new Vector3(1f, 0f, 0f) * moveSpeed);
         }
     }
     private void OnCollisionEnter(Collision collision)
