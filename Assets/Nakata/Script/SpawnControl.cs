@@ -34,13 +34,13 @@ public class SpawnControl : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Z))
         {
-            ChangeGame = true;
-            Generate = IsGenerate(Generate);
+            IsGenerate();
+            IsChengeGame();
         }
 
         if(Input.GetKeyDown(KeyCode.C))
         {
-            Generate = IsGenerate(Generate);
+            IsGenerate();
         }
 
         if(!ChangeGame)
@@ -95,10 +95,16 @@ public class SpawnControl : MonoBehaviour
         }
     }
 
-    public bool IsGenerate(bool flag)
+    //生成を停止する関数
+    public void IsGenerate()
     {
-        //フラグの切り替え
-        flag = !flag;
-        return flag;
+        Generate = !Generate;
     }
+
+    //配列順とランダム生成を切り替える関数
+    public void IsChengeGame()
+    {
+        ChangeGame = !ChangeGame;
+    }
+
 }
