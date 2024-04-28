@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int missCount = 0;
 
+    
+
     //外部から魚の最大生成数を取得用
     public int GetMaxGenerationFishCount()
     {
@@ -38,12 +40,18 @@ public class GameManager : MonoBehaviour
     public void SetSuccessCount()
     {
         successCount++;
+        nowFishCount--;//残りカウント
+
+        //以下にnowCountが０になったらResult処理へ移行
     }
 
     //失敗した仕分けのカウントアップ処理
     public void SetMissCount()
     {
         missCount++;
+        nowFishCount--;//残りカウント
+
+        //以下にnowCountが０になったらResult処理へ移行
     }
 
     // Start is called before the first frame update

@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 3529047358315853245}
   m_Layer: 7
   m_Name: Debug_maguro
-  m_TagString: Untagged
+  m_TagString: GoodFish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
