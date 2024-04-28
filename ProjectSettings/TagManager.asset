@@ -3,16 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Test_marbas_wall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - marbas_piston
   - Water
   - UI
-  - 
-  - 
+  - marbas_Switch
+  - maguro_obj
   - 
   - 
   - 
