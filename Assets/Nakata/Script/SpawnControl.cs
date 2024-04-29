@@ -41,6 +41,7 @@ public class SpawnControl : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.C))
         {
             IsGenerate();
+            //SoundManager.instance.PlayoneShotSE(0);
         }
 
         if(!ChangeGame)
