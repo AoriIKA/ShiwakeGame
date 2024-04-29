@@ -51,9 +51,9 @@ public class SoundManager : MonoBehaviour
         seAudioSource.PlayOneShot(data.audioClip);
     }
 
-    public void PlayoneShotSE(int index)
+    public void PlayoneShotSE(SESoundData.SE index)
     {
-        seAudioSource.PlayOneShot(SEClip[index]);
+        seAudioSource.PlayOneShot(SEClip[(int)index]);
     }
 
 }
@@ -79,9 +79,10 @@ public class SESoundData
 {
     public enum SE
     {
-        Attack,
-        Damage,
-        Hoge, // ‚±‚ê‚ªƒ‰ƒxƒ‹‚É‚È‚é
+        SE_Piston,
+        SE_Switching,
+        SE_GoodCarry,
+        SE_BadCarry,
     }
 
     public SE se;                   //ƒ‰ƒxƒ‹
