@@ -329,7 +329,7 @@ GameObject:
 --- !u!1 &941047517
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 2746604927012499397, guid: ffe80881d6a198a478a828f6d50147cd, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
@@ -373,7 +373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1009944344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -426,7 +426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1433253571
 Transform:
   m_ObjectHideFlags: 0
@@ -770,6 +770,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3215460050849464500, guid: ffc79ebca2fd00e438c6e06f11b3400c, type: 3}
+      propertyPath: moveSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215460050849464500, guid: ffc79ebca2fd00e438c6e06f11b3400c, type: 3}
+      propertyPath: fish_conbea_moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3879595273920660305, guid: ffc79ebca2fd00e438c6e06f11b3400c, type: 3}
       propertyPath: m_Name
       value: Debug_maguro
