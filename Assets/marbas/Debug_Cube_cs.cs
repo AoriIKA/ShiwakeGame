@@ -8,7 +8,6 @@ public class Debug_Cube_cs : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField, Header("スピード,MoveSpeedは基本25")]
     private float moveSpeed;
-
     [SerializeField] private float fish_conbea_moveSpeed;
     bool is_hit = false;
     private bool isMoved = true;
@@ -40,7 +39,7 @@ public class Debug_Cube_cs : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(is_hit) rb.AddForce(new Vector3(moveSpeed, 0, 0f), ForceMode.Acceleration);
+        if(is_hit) rb.AddForce(new Vector3(moveSpeed, 0f, 0f), ForceMode.Acceleration);
     }
 
     public void IsMoveDisableFlag()
