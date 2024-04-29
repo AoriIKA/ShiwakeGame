@@ -16,6 +16,7 @@ public class switch_cs : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            SoundManager.instance.PlayoneShotSE(SESoundData.SE.SE_Switching);
             if (Switch_bool)
             {
                 this.transform.rotation = Quaternion.Euler(0, -45f, 0);

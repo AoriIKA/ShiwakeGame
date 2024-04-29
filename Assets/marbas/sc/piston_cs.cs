@@ -28,6 +28,7 @@ public class piston_cs : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)&&!piston_now)
         {
+            SoundManager.instance.PlayoneShotSE(SESoundData.SE.SE_Piston);
             piston_now = true;
             piston_now_Camera_Shake();
             IM.Player_A_KeyDown();

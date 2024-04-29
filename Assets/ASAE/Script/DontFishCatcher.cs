@@ -16,7 +16,8 @@ public class DontFishCatcher : MonoBehaviour
         if (other.transform.tag == "DontFish")
         {
             gameManager.SetSuccessCount();
-            other.transform.parent = parentObject;//魚オブジェクトを籠の子にする
+            SoundManager.instance.PlayoneShotSE(SESoundData.SE.SE_GoodCarry);
+            //other.transform.parent = parentObject;//魚オブジェクトを籠の子にする
             other.transform.tag = "InspectedFish";
             other.GetComponent<Debug_Cube_cs>().IsMoveDisableFlag();
             other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
@@ -26,7 +27,8 @@ public class DontFishCatcher : MonoBehaviour
         else if (other.transform.tag == "BadFish" || other.transform.tag == "GoodFish")
         {
             gameManager.SetMissCount();
-            other.transform.parent = parentObject;//魚オブジェクトを籠の子にする
+            SoundManager.instance.PlayoneShotSE(SESoundData.SE.SE_BadCarry);
+           // other.transform.parent = parentObject;//魚オブジェクトを籠の子にする
             other.transform.tag = "InspectedFish";
             other.GetComponent<Debug_Cube_cs>().IsMoveDisableFlag();
             other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
