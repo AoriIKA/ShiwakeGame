@@ -6,6 +6,7 @@ using DG.Tweening;
 public class piston_cs : MonoBehaviour
 {
     [SerializeField] GameObject Piston_obj;
+    [SerializeField] private Image_Chenge IM;
     [Space(10)]
     [Header("ÉJÉÅÉâÇÃêUìÆ")]
     [SerializeField] private float Camera_duration;
@@ -29,6 +30,7 @@ public class piston_cs : MonoBehaviour
         {
             piston_now = true;
             piston_now_Camera_Shake();
+            IM.Player_A_KeyDown();
             StartCoroutine(piston_Action());
         }
     }
@@ -43,6 +45,7 @@ public class piston_cs : MonoBehaviour
         yield return new WaitForSeconds(1f);
         transform.position = new Vector3(piston_Vecter_X, this.transform.position.y, this.transform.position.z);
         piston_now =false;
+        IM.PlayerA_KeyUp();
     }
     void piston_now_Camera_Shake()
     {

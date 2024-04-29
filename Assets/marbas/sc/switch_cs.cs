@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class switch_cs : MonoBehaviour
 {
-    bool Switch_bool=true;
+    [SerializeField] private Image_Chenge IM;
+    bool Switch_bool =true;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,7 @@ public class switch_cs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if (Switch_bool)
             {
@@ -24,6 +25,7 @@ public class switch_cs : MonoBehaviour
                 this.transform.rotation = Quaternion.Euler(0, 45, 0);
                 Switch_bool = true;
             }
-        }
+            IM.Player_B_KeyDown();
+        }else if(Input.GetKeyUp(KeyCode.Return)) IM.Player_B_KeyUp();
     }
 }
