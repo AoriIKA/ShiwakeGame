@@ -40,7 +40,7 @@ public class Debug_Cube_cs : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(is_hit) rb.AddForce(new Vector3(moveSpeed, 0f, 0f), ForceMode.Acceleration);
+        if(is_hit) rb.AddForce(new Vector3(moveSpeed, 0, 0f), ForceMode.Acceleration);
     }
 
     public void IsMoveDisableFlag()
